@@ -113,6 +113,14 @@ const PRODUCTS = [
     image: "https://media.bio.site/sites/590d4e5c-2c2f-401d-acca-7d3d15156ab4/S3ohHeSQUy8BsYmVMQdhqd.jpg",
     category: "furniture",
     description: "A high-end, frameless asymmetric vanity mirror with a matching organic wooden stand for retro dresser layouts."
+  },
+  {
+    id: 15,
+    name: "PAINTINGMANTRA Vintage Blue Birds Wall Art (Set of 7)",
+    url: "https://amzn.to/4wTe9mf",
+    image: "images/vintage_birds_art.png",
+    category: "decor",
+    description: "An elegant set of 7 vintage-style framed Indian wall art prints featuring detailed blue bird and floral patterns."
   }
 ];
 

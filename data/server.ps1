@@ -171,7 +171,7 @@ while ($Listener.IsListening) {
         Write-Host "Request: $Method -> $Path" -ForegroundColor DarkGray
         
         # 1. SERVING STATIC WEB FILES (public/)
-        if ($Path -eq "/" -or $Path -eq "/index.html" -or $Path -eq "/style.css" -or $Path -eq "/app.js") {
+        if ($Path -eq "/" -or $Path -eq "/index.html" -or $Path -eq "/style.css" -or $Path -eq "/app.js" -or $Path.StartsWith("/images/")) {
             $FileName = if ($Path -eq "/") { "index.html" } else { $Path.TrimStart('/') }
             $PublicDir = Join-Path $PSScriptRoot "public"
             if (-not (Test-Path $PublicDir)) {
@@ -184,8 +184,15 @@ while ($Listener.IsListening) {
                 $ContentType = "text/html"
                 if ($FileName.EndsWith(".css")) { $ContentType = "text/css" }
                 elseif ($FileName.EndsWith(".js")) { $ContentType = "application/javascript" }
+                elseif ($FileName.EndsWith(".png")) { $ContentType = "image/png" }
+                elseif ($FileName.EndsWith(".jpg") -or $FileName.EndsWith(".jpeg")) { $ContentType = "image/jpeg" }
+                elseif ($FileName.EndsWith(".webp")) { $ContentType = "image/webp" }
                 
-                $Response.ContentType = "$ContentType; charset=utf-8"
+                if ($ContentType.StartsWith("text/") -or $ContentType -eq "application/javascript") {
+                    $Response.ContentType = "$ContentType; charset=utf-8"
+                } else {
+                    $Response.ContentType = $ContentType
+                }
                 $Response.ContentLength64 = $Bytes.Length
                 $Response.OutputStream.Write($Bytes, 0, $Bytes.Length)
             } else {
