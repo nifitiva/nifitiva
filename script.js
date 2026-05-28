@@ -118,7 +118,7 @@ const PRODUCTS = [
     id: 15,
     name: "PAINTINGMANTRA Vintage Blue Birds Wall Art (Set of 7)",
     url: "https://amzn.to/4wTe9mf",
-    image: "images/vintage_birds_art.jpg",
+    image: "images/vintage_birds_art.png",
     category: "decor",
     description: "An elegant set of 7 vintage-style framed Indian wall art prints featuring detailed blue bird and floral patterns."
   }
