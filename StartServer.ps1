@@ -631,6 +631,9 @@ try {
                 } else {
                     # Serves from PUBLIC folder
                     $cleanedPath = $urlPath.Replace("/", "\").TrimStart("\")
+                    if ($cleanedPath.StartsWith("public\")) {
+                        $cleanedPath = $cleanedPath.Substring(7)
+                    }
                     $filePath = Join-Path (Get-Location) (Join-Path "public" $cleanedPath)
                 }
                 
