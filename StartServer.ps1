@@ -3,6 +3,9 @@
 # (Pure built-in PowerShell & .NET assemblies - NO Node.js required!)
 # ==========================================================================
 
+# Enforce TLS 1.2 and TLS 1.3 protocol support for external web requests
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13
+
 $port = 3000
 $proxyPort = 8080
 
@@ -104,6 +107,24 @@ function Write-JSON($filePath, $data) {
     } catch {
         return $false
     }
+}
+
+# Safe parsers to protect types and locales from throwing crashes
+function Safe-Int($val, $fallback = 0) {
+    if ($null -eq $val -or [string]::IsNullOrWhiteSpace($val.ToString())) { return $fallback }
+    $str = $val.ToString().Trim()
+    if ($str.Contains(".")) { $str = $str.Split(".")[0] }
+    $out = 0
+    if ([int]::TryParse($str, [ref]$out)) { return $out }
+    return $fallback
+}
+
+function Safe-Double($val, $fallback = 4.5) {
+    if ($null -eq $val -or [string]::IsNullOrWhiteSpace($val.ToString())) { return $fallback }
+    $str = $val.ToString().Trim().Replace(",", ".")
+    $out = 0.0
+    if ([double]::TryParse($str, [System.Globalization.NumberStyles]::Any, [System.Globalization.CultureInfo]::InvariantCulture, [ref]$out)) { return $out }
+    return $fallback
 }
 
 # Rebuild static products.js database for GitHub Pages storefront
@@ -321,13 +342,13 @@ try {
                             id = ("prod_" + (Get-Date -UFormat %s) + "_" + (New-Guid).Guid.Substring(0, 5))
                             title = $prod.title
                             description = if ($prod.description) { $prod.description } else { "" }
-                            category = if ($prod.category) { $prod.category } else { "Viral Finds" }
+                            category = if ($prod.category) { $prod.category } else { "decor" }
                             videoUrl = if ($prod.videoUrl) { $prod.videoUrl } else { "" }
                             imageUrl = if ($prod.imageUrl) { $prod.imageUrl } else { "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" }
-                            price = [int]$prod.price
-                            originalPrice = if ($prod.originalPrice) { [int]$prod.originalPrice } else { [int]$prod.price * 2 }
+                            price = Safe-Int $prod.price 999
+                            originalPrice = if ($prod.originalPrice) { Safe-Int $prod.originalPrice (Safe-Int $prod.price 999 * 2) } else { Safe-Int $prod.price 999 * 2 }
                             affiliateUrl = $affLink
-                            rating = if ($prod.rating) { [double]$prod.rating } else { 4.5 }
+                            rating = Safe-Double $prod.rating 4.5
                             views = 0
                             clicks = 0
                             tags = if ($prod.tags) { $prod.tags } else { @() }
@@ -524,7 +545,9 @@ try {
                             try {
                                 $headersOnly = Invoke-WebRequest -Uri $pinUrl -MaximumRedirection 0 -ErrorAction SilentlyContinue
                             } catch {
-                                $targetUrl = $_.Exception.Response.Headers["Location"]
+                                if ($null -ne $_.Exception.Response -and $null -ne $_.Exception.Response.Headers) {
+                                    $targetUrl = $_.Exception.Response.Headers["Location"]
+                                }
                             }
                             if ([string]::IsNullOrEmpty($targetUrl)) {
                                 $targetUrl = $pinUrl
@@ -567,8 +590,8 @@ try {
                         }
                         
                         # Clean strings HTML entities
-                        $title = [System.Web.HttpUtility]::HtmlDecode($title) -replace " \| Pinterest", ""
-                        $desc = [System.Web.HttpUtility]::HtmlDecode($desc) -replace "Discover recipes, home ideas, style inspiration.*", ""
+                        $title = [System.Net.WebUtility]::HtmlDecode($title) -replace " \| Pinterest", ""
+                        $desc = [System.Net.WebUtility]::HtmlDecode($desc) -replace "Discover recipes, home ideas, style inspiration.*", ""
                         
                         $resObj = @{
                             success = $true
