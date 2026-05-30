@@ -1,0 +1,43 @@
+[
+    {
+        "id":  "worker_1780027823443",
+        "name":  "Nanka",
+        "mobile":  "9305727780",
+        "salary":  150,
+        "photo":  "https://api.dicebear.com/7.x/adventurer/svg?seed=Felix\u0026hair=short01",
+        "attendance":  {
+                           "2026-05-29":  "P",
+                           "2026-05-01":  "A",
+                           "2026-05-02":  "P",
+                           "2026-05-03":  "P",
+                           "2026-05-04":  "P",
+                           "2026-05-05":  "P",
+                           "2026-05-11":  "A",
+                           "2026-05-10":  "P",
+                           "2026-05-09":  "P",
+                           "2026-05-08":  "P",
+                           "2026-05-18":  "P",
+                           "2026-05-19":  "P",
+                           "2026-05-24":  "P",
+                           "2026-05-25":  "P",
+                           "2026-05-26":  "P",
+                           "2026-05-30":  "P"
+                       },
+        "udhaar":  {
+                       "2026-05-09":  500
+                   }
+    },
+    {
+        "id":  "worker_1780029302153",
+        "name":  "Nanka",
+        "mobile":  "9305727780",
+        "salary":  150,
+        "photo":  "https://api.dicebear.com/7.x/adventurer/svg?seed=Felix\u0026hair=short01",
+        "attendance":  {
+
+                       },
+        "udhaar":  {
+
+                   }
+    }
+]

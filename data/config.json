@@ -1,0 +1,11 @@
+{
+  "amazonTag": "mallika-21",
+  "pinterestClientId": "",
+  "pinterestClientSecret": "",
+  "pinterestAccessToken": "",
+  "pinterestBoardId": "",
+  "pinterestBoardName": "Smart Home & Viral Finds",
+  "postingIntervalHours": 2,
+  "pinsPerDay": 8,
+  "simulationMode": true
+}

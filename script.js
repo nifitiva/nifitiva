@@ -1,7 +1,7 @@
 // NIFITIVA Premium Amazon Affiliate Hub - Main Core Logic
 // Structured product inventory, fuzzy searching, category tabs filtering, and toast controls
 
-const PRODUCTS = [
+const ORIGINAL_FALLBACK_PRODUCTS = [
   {
     id: 1,
     name: "3D Sandscape In Motion Display",
@@ -123,6 +123,23 @@ const PRODUCTS = [
     description: "An elegant set of 7 vintage-style framed Indian wall art prints featuring detailed blue bird and floral patterns."
   }
 ];
+
+// Helper to unify databases
+const getCatalogProducts = () => {
+  if (typeof PRODUCTS_DATABASE !== "undefined" && PRODUCTS_DATABASE.length > 0) {
+    return PRODUCTS_DATABASE.map(p => ({
+      id: p.id,
+      name: p.title || p.name,
+      url: p.affiliateUrl || p.url,
+      image: p.imageUrl || p.image,
+      category: p.category ? p.category.toLowerCase() : "decor",
+      description: p.description
+    }));
+  }
+  return ORIGINAL_FALLBACK_PRODUCTS;
+};
+
+const PRODUCTS = getCatalogProducts();
 
 // State variables
 let currentSearch = "";

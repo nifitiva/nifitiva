@@ -4,151 +4,315 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <!-- Premium SEO Tags -->
-  <title>NIFITIVA | Curated Premium Home Decor & Useful Finds</title>
-  <meta name="description" content="Discover high-aesthetic home decor, lighting, furniture, and useful finds curated by NIFITIVA. Shop Amazon affiliate links featured in our viral reels.">
+  <title>Nifitiva Automator | Pinterest Affiliate Marketing Hub</title>
   
-  <!-- Open Graph / Social Sharing Meta -->
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="NIFITIVA | Premium Home Decor & Useful Finds">
-  <meta property="og:description" content="Elevate your everyday spaces with curated premium finds and decor styling guides by NIFITIVA.">
-  <meta property="og:url" content="https://bio.site/Nifitiva">
-  <meta property="og:image" content="https://media.bio.site/sites/590d4e5c-2c2f-401d-acca-7d3d15156ab4/jFwSN9HBPLG3FWx8JLEGoY.jpg">
-  <meta property="og:image:alt" content="NIFITIVA Home Styling">
-  
-  <!-- Favicon -->
-  <link rel="icon" href="https://media.bio.site/favicon.ico">
-  
-  <!-- Fonts: Outfit (Body) & Playfair Display (Brand Serif Layout) -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   
-  <!-- FontAwesome vector icons -->
+  <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
-  <!-- Linked styles -->
-  <link rel="stylesheet" href="style.css?v=2.1">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css?v=4.0">
 </head>
 <body>
 
-  <!-- DYNAMIC BACKGROUND BLURS -->
-  <div class="bg-glow glow-top-left"></div>
-  <div class="bg-glow glow-center"></div>
-  <div class="bg-glow glow-bottom-right"></div>
+  <!-- Dynamic glows -->
+  <div class="glow-bg glow-cyan"></div>
+  <div class="glow-bg glow-magenta"></div>
 
-  <!-- NAVIGATION NAVBAR -->
-  <nav class="navbar" id="navbar">
+  <!-- Header Navbar -->
+  <nav class="admin-nav">
     <div class="container nav-container">
-      <!-- High-fidelity Vectorized Brand Logo -->
-      <a href="#" class="logo-box" aria-label="NIFITIVA Home">
-        <span class="logo-main">Nifitiva</span>
-        <span class="logo-sub">Mallika</span>
-      </a>
+      <div class="logo-box">
+        <i class="fa-solid fa-wand-magic-sparkles logo-icon"></i>
+        <span class="logo-text">Nifitiva<span>Automator</span></span>
+      </div>
       
-      <!-- Social links directly routing to official profiles -->
-      <div class="social-nav">
-        <a href="https://www.instagram.com/niffitiva" target="_blank" rel="noopener noreferrer" class="social-btn" title="Follow on Instagram" aria-label="Instagram Profile">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.pinterest.com/nifitivaa/" target="_blank" rel="noopener noreferrer" class="social-btn" title="Follow on Pinterest" aria-label="Pinterest Profile">
-          <i class="fa-brands fa-pinterest-p"></i>
-        </a>
-        <a href="mailto:corexstudies@gmail.com" class="social-btn" title="Send Email" aria-label="Contact Email">
-          <i class="fa-regular fa-envelope"></i>
+      <div class="nav-controls">
+        <span class="system-time" id="nav-clock"><i class="fa-regular fa-clock"></i> Loading clock...</span>
+        
+        <!-- Live Storefront Link shortcut -->
+        <a href="/store.html" target="_blank" class="store-shortcut-link">
+          <i class="fa-solid fa-store"></i> View Storefront
         </a>
       </div>
     </div>
   </nav>
 
-  <!-- MAIN COVER WRAPPER -->
-  <main class="container">
+  <!-- Main Container -->
+  <main class="container admin-layout">
     
-    <!-- BRAND HERO SECTION -->
-    <header class="hero">
-      <div class="hero-profile-container">
-        <div class="hero-profile-ring"></div>
-        <img src="https://media.bio.site/sites/590d4e5c-2c2f-401d-acca-7d3d15156ab4/jFwSN9HBPLG3FWx8JLEGoY.jpg" alt="NIFITIVA Mallika Logo Profile" class="hero-profile-img">
+    <!-- Row 1: Analytics -->
+    <section class="stats-row">
+      <div class="stat-card" id="stat-products">
+        <div class="stat-icon cyan"><i class="fa-solid fa-cart-shopping"></i></div>
+        <div class="stat-data">
+          <span class="stat-lbl">Synced Products</span>
+          <h2 class="stat-val" id="val-products">0</h2>
+        </div>
       </div>
       
-      <div class="hero-title-box">
-        <span class="hero-tag">Aesthetic Finds</span>
-        <h1>Welcome to <span>NIFITIVA</span></h1>
-        <p>Home • Style • Useful Finds</p>
-      </div>
-    </header>
-
-    <!-- INTERACTIVE CONTROL PANEL (Search + Filters) -->
-    <section class="control-panel">
-      <!-- Real-time search bar -->
-      <div class="search-wrapper">
-        <input type="text" id="search-input" class="search-input" placeholder="Search for items featured in Reels..." autocomplete="off">
-        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+      <div class="stat-card" id="stat-queue">
+        <div class="stat-icon magenta"><i class="fa-solid fa-calendar-days"></i></div>
+        <div class="stat-data">
+          <span class="stat-lbl">Scheduled Pins</span>
+          <h2 class="stat-val" id="val-queue">0</h2>
+        </div>
       </div>
       
-      <!-- Categories Filter Tabs -->
-      <div class="filter-tabs">
-        <button class="filter-btn active" data-category="all" id="btn-cat-all">All Finds</button>
-        <button class="filter-btn" data-category="lighting" id="btn-cat-lighting">Lighting</button>
-        <button class="filter-btn" data-category="decor" id="btn-cat-decor">Decor</button>
-        <button class="filter-btn" data-category="furniture" id="btn-cat-furniture">Furniture & Mirrors</button>
-        <button class="filter-btn" data-category="useful finds" id="btn-cat-useful">Useful Finds</button>
+      <div class="stat-card" id="stat-clicks">
+        <div class="stat-icon amber"><i class="fa-solid fa-arrow-pointer"></i></div>
+        <div class="stat-data">
+          <span class="stat-lbl">Pinterest Clicks</span>
+          <h2 class="stat-val" id="val-clicks">0</h2>
+        </div>
+      </div>
+      
+      <div class="stat-card" id="stat-earnings">
+        <div class="stat-icon emerald"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+        <div class="stat-data">
+          <span class="stat-lbl">Est. Affiliate Revenue</span>
+          <h2 class="stat-val" id="val-earnings">₹0</h2>
+        </div>
       </div>
     </section>
 
-    <!-- PRODUCTS DYNAMIC GRID -->
-    <section class="products-section">
-      <div class="product-grid" id="product-grid">
-        <!-- Dynamically loaded product card items via app.js -->
+    <!-- Row 2: Pinterest Video Downloader & Scraper Card -->
+    <section class="scraper-section">
+      <div class="card scraper-card">
+        <div class="card-header">
+          <h3><i class="fa-brands fa-pinterest"></i> Pinterest Video Downloader & Scraper</h3>
+          <span class="header-desc">Enter any Pinterest Pin URL to automatically extract details & loop video</span>
+        </div>
+        
+        <div class="scraper-body">
+          <div class="url-input-bar">
+            <input type="text" id="pinterest-url" class="form-control url-input" placeholder="Paste Pinterest pin link (e.g., https://pin.it/... or https://pinterest.com/pin/...)" autocomplete="off">
+            <button class="btn btn-primary" id="btn-analyze" onclick="analyzePinterestUrl()">
+              <i class="fa-solid fa-arrows-spin" id="analyze-spinner" style="display: none;"></i> Analyze Pin
+            </button>
+          </div>
+          
+          <!-- Analyzed Result Box (Toggled on success) -->
+          <div class="analysis-results" id="scraper-results-box" style="display: none;">
+            <div class="results-grid">
+              
+              <!-- Left side: Media preview player -->
+              <div class="media-preview-column">
+                <div class="media-preview-box">
+                  <video id="preview-video" autoplay loop muted playsinline controls></video>
+                  <img id="preview-image" src="" alt="Scraped media" style="display: none;">
+                  <div class="media-badge" id="preview-media-type">VIDEO EXTRACTED</div>
+                </div>
+              </div>
+              
+              <!-- Right side: Edit & Schedule specifications -->
+              <div class="details-edit-column">
+                <div class="form-group">
+                  <label class="form-label">Pin Title</label>
+                  <input type="text" id="edit-title" class="form-control" placeholder="E.g., Cosmic Sunset Lamp Projector">
+                </div>
+                
+                <div class="form-group">
+                  <div class="label-row">
+                    <label class="form-label">Pin Description</label>
+                    <button class="btn-micro" onclick="rewriteAIPinDescription()"><i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Rewrite Description</button>
+                  </div>
+                  <textarea id="edit-description" class="form-control form-textarea" rows="3" placeholder="Enter custom pin description..."></textarea>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label class="form-label">Catalog Price (₹) *</label>
+                    <input type="number" id="edit-price" class="form-control" placeholder="E.g., 499">
+                  </div>
+                  <div class="form-group col-6">
+                    <label class="form-label">Original Price (₹)</label>
+                    <input type="number" id="edit-original-price" class="form-control" placeholder="E.g., 1299">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <label class="form-label">Niche Category</label>
+                    <select id="edit-category" class="form-control">
+                      <option value="decor">Decor</option>
+                      <option value="lighting">Lighting</option>
+                      <option value="furniture">Furniture & Mirrors</option>
+                      <option value="useful finds">Useful Finds</option>
+                    </select>
+                  </div>
+                  <div class="form-group col-6">
+                    <label class="form-label">Target Pinterest Board</label>
+                    <input type="text" id="edit-board" class="form-control" placeholder="Smart Home & Viral Finds">
+                  </div>
+                </div>
+                
+                <div class="form-group">
+                  <label class="form-label">Original Amazon Product URL</label>
+                  <input type="text" id="edit-affiliate" class="form-control" placeholder="Paste Amazon product link (Affiliate tag will be injected automatically)">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label">Schedule Auto-Post Time *</label>
+                  <input type="datetime-local" id="edit-schedule-time" class="form-control">
+                  <small class="help-text">Select date and time to automate this post</small>
+                </div>
+
+                <!-- Submit trigger -->
+                <div class="results-actions">
+                  <button class="btn btn-secondary" onclick="resetScraper()">Cancel</button>
+                  <button class="btn btn-primary" onclick="downloadScrapedMedia()" id="btn-download-media" title="Download the scraped high-quality video file to post manually on Pinterest!">
+                    <i class="fa-solid fa-download"></i> Download Video
+                  </button>
+                  <button class="btn btn-success flex-grow" onclick="saveScrapedProduct()">
+                    <i class="fa-solid fa-circle-check"></i> Automate & Sync to Website
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Row 3: Automation Queue & Console Logs -->
+    <section class="automation-row">
+      <!-- Left: Queue timeline -->
+      <div class="card timeline-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-clock"></i> Daily Pin Scheduler Queue</h3>
+          <span class="header-desc">Automatic queue of 5-10 video pins scheduled daily</span>
+        </div>
+        <div class="timeline-body" id="scheduler-queue-list">
+          <div class="empty-state-queue">
+            <i class="fa-regular fa-calendar-xmark"></i>
+            <p>No pins scheduled. Scrape a Pinterest video to add to queue!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Real-time logs -->
+      <div class="card console-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-terminal"></i> Nifitiva Engine Log Console</h3>
+          <span class="header-desc">Live activity logs of video scraper, schedules, and postings</span>
+        </div>
+        <div class="console-body" id="console-logs-container">
+          <div class="console-line text-muted">[05:30:00 AM] [SYSTEM] Nifitiva engine initialized in simulation mode.</div>
+          <div class="console-line text-success">[05:30:05 AM] [AUTOMATOR] Core scheduler active, scanning schedule queue every 15s.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Row 4: Config Settings & Trends Radar -->
+    <section class="settings-trends-row">
+      <!-- Left: Trends radar -->
+      <div class="card trends-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-fire"></i> Viral Gadgets Trends Radar</h3>
+          <span class="header-desc">Hot curated products with high search volumes on Pinterest</span>
+        </div>
+        <div class="trends-body">
+          <div class="trends-grid" id="trends-grid-feed">
+            <!-- Simulated trend items populated dynamically -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Config & GitHub publisher -->
+      <div class="card settings-card">
+        <div class="card-header">
+          <h3><i class="fa-solid fa-sliders"></i> Integration Settings</h3>
+          <span class="header-desc">Configure affiliate codes, Pinterest APIs, and simulation triggers</span>
+        </div>
+        
+        <div class="settings-body">
+          <form id="settings-form" onsubmit="saveConfig(event)">
+            <!-- Simulation Mode Pulsing toggle -->
+            <div class="simulation-toggle-box">
+              <div class="sim-label-side">
+                <h4 class="sim-title">Automator Simulation Mode</h4>
+                <p class="sim-desc">Auto-simulate scraper extraction, Pinterest postings, organic views, and affiliate click volumes in console.</p>
+              </div>
+              <label class="switch-toggle">
+                <input type="checkbox" id="config-simulation" onchange="toggleSimulationMode(this.checked)">
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Amazon India Associate Tag *</label>
+              <input type="text" id="config-amazon-tag" class="form-control" placeholder="E.g., mallika-21" required>
+              <small class="help-text">Automatically gets appended to all synced Amazon product links (`tag=your_tag`)</small>
+            </div>
+
+            <div class="collapsible-api-settings" id="pinterest-api-settings-panel">
+              <h4 class="settings-subtitle"><i class="fa-brands fa-pinterest-p"></i> Pinterest Developer API Configuration</h4>
+              
+              <div class="form-group">
+                <label class="form-label">Pinterest Access Token</label>
+                <input type="password" id="config-pinterest-token" class="form-control" placeholder="Bearer Access Token (OAuth2)">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group col-6">
+                  <label class="form-label">Pinterest Board ID</label>
+                  <input type="text" id="config-pinterest-board-id" class="form-control" placeholder="Board ID (18 digits)">
+                </div>
+                <div class="form-group col-6">
+                  <label class="form-label">Pinterest Board Name</label>
+                  <input type="text" id="config-pinterest-board-name" class="form-control" placeholder="Smart Home Finds">
+                </div>
+              </div>
+            </div>
+
+            <div class="settings-actions">
+              <button type="submit" class="btn btn-primary w-full"><i class="fa-solid fa-save"></i> Save Configurations</button>
+            </div>
+          </form>
+
+          <hr class="settings-divider">
+
+          <!-- Magic GitHub Sync Panel -->
+          <div class="github-sync-panel">
+            <h4 class="settings-subtitle"><i class="fa-brands fa-github"></i> Deploy to Live GitHub Pages</h4>
+            <p class="github-desc">Automatically rebuild your storefront arrays, commit updates, and push to your live website `https://nifitiva.github.io/nifitiva/` with one click.</p>
+            
+            <button class="btn btn-success w-full pulsing-success-btn" onclick="syncStorefrontToGitHub()">
+              <i class="fa-solid fa-cloud-arrow-up"></i> 1-Click Publish to GitHub Pages
+            </button>
+            
+            <!-- Terminal Log Overlay (Triggered upon push launch) -->
+            <div class="git-terminal-box" id="git-terminal-logs" style="display: none;">
+              <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-title">git console @ nifitiva-deployment</span>
+              </div>
+              <div class="terminal-body" id="git-terminal-output">
+                nifitiva-sync-hub:~$ initiating remote push...
+              </div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
   </main>
 
-  <!-- LEGALLY COMPLIANT DISCLOSURE FOOTER -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <div class="footer-brand">
-        <div class="logo-box">
-          <span class="logo-main" style="font-size:1.8rem;">Nifitiva</span>
-          <span class="logo-sub" style="font-size:0.65rem; color:var(--clr-muted)">Mallika</span>
-        </div>
-      </div>
-      
-      <!-- Follow-up social links -->
-      <div class="footer-socials">
-        <a href="https://www.instagram.com/niffitiva" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-        <a href="https://www.pinterest.com/nifitivaa/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Pinterest">
-          <i class="fa-brands fa-pinterest-p"></i>
-        </a>
-        <a href="mailto:corexstudies@gmail.com" class="social-btn" aria-label="Email">
-          <i class="fa-regular fa-envelope"></i>
-        </a>
-      </div>
-
-      <!-- Amazon Legal Disclaimer Box -->
-      <div class="footer-disclosure">
-        <h4>Amazon Associate Disclosure</h4>
-        <p class="disclosure-text">
-          NIFITIVA is a participant in the Amazon Services LLC Associates Program, an affiliate advertising program designed to provide a means for sites to earn advertising fees by advertising and linking to Amazon.com. As an Amazon Associate, we earn from qualifying purchases at no extra cost to you.
-        </p>
-      </div>
-    </div>
-    
-    <div class="footer-bottom">
-      <p>&copy; 2026 NIFITIVA. All rights reserved. Designed with premium aesthetics.</p>
-    </div>
-  </footer>
-
-  <!-- NOTIFICATION TOAST OVERLAY -->
-  <div id="toast" class="toast" role="alert" aria-live="assertive">
-    <i class="fa-solid fa-circle-check"></i>
-    <span id="toast-text">Affiliate link copied successfully!</span>
+  <!-- NOTIFICATION TOAST -->
+  <div id="toast" class="toast" role="alert">
+    <i id="toast-icon" class="fa-solid fa-circle-check"></i>
+    <span id="toast-text">Success! Config saved successfully.</span>
   </div>
 
-  <!-- Main JavaScript File -->
-  <script src="app.js?v=2.1"></script>
+  <!-- Scripts -->
+  <script src="app.js?v=4.0"></script>
 </body>
 </html>
